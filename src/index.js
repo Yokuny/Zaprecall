@@ -1,14 +1,14 @@
-import reactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import ResetCss from "./components/ResetCss";
-import Layout from "./components/Layout";
-const root = document.getElementById("root");
-reactDOM.render(
+import Displace from "./components/Displace";
+const dom = document.getElementById("root");
+const root = createRoot(dom);
+root.render(
   <>
     <ResetCss />
-    <Layout>
+    <Displace>
       <App />
-    </Layout>
-  </>,
-  root
+    </Displace>
+  </>
 );

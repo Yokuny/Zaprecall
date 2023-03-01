@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 const ResetCss = createGlobalStyle`
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive&family=Righteous&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,7 +21,8 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'Recursive', sans-serif;
+	font-family: 'Righteous', cursive;
 	vertical-align: baseline;
 }
 article, aside, details, figcaption, figure, 
@@ -25,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	background-color:#FB6B6B;
 	line-height: 1;
 }
 ol, ul {

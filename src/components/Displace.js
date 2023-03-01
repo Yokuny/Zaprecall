@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Layout = styled.div`
+const Displace = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-export default Layout;
+export default Displace;
