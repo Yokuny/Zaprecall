@@ -19,21 +19,29 @@ export const Cards = styled.ul`
 `;
 export const AnCard = ({ done, cardNumber, question, answer }) => {
   const [openCard, setOpenCard] = useState(false);
+  const [finished, setFinished] = useState(false);
+  const [color, setColor] = useState("#000");
+  const [icon, setIcon] = useState(0);
+
   const getUserAnswer = (answer) => {
     if (answer === 1) {
-      console.log("acertou");
-    } else if (answer === 0) {
-      console.log("quase acertou");
-    } else if (answer === -1) {
-      console.log("errou");
+      setIcon(1);
+      setColor("#2FBE34");
+    } else if (answer === 2) {
+      setIcon(2);
+      setColor("#FF922E");
+    } else if (answer === 3) {
+      setIcon(3);
+      setColor("#FF3030");
     }
     setOpenCard(false);
     done((prev) => prev + 1);
+    setFinished(true);
   };
   const cardToRender = openCard ? (
     <CardQuestion closeCard={getUserAnswer} question={question} answer={answer} />
   ) : (
-    <CardFace openCard={setOpenCard} number={cardNumber} />
+    <CardFace finished={finished} iconIndex={icon} color={color} openCard={setOpenCard} number={cardNumber} />
   );
   return <li>{cardToRender}</li>;
 };
