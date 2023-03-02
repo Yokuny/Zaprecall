@@ -17,7 +17,7 @@ export const Cards = styled.ul`
     border-radius: 5px;
   }
 `;
-export const AnCard = ({ done, cardNumber, question, answer }) => {
+export const AnCard = ({ done, iconsArray, cardNumber, question, answer }) => {
   const [openCard, setOpenCard] = useState(false);
   const [finished, setFinished] = useState(false);
   const [color, setColor] = useState("#000");
@@ -26,12 +26,15 @@ export const AnCard = ({ done, cardNumber, question, answer }) => {
   const getUserAnswer = (answer) => {
     if (answer === 1) {
       setIcon(1);
+      iconsArray((prev) => [...prev, 0]);
       setColor("#2FBE34");
     } else if (answer === 2) {
       setIcon(2);
+      iconsArray((preve) => [...preve, 1]);
       setColor("#FF922E");
     } else if (answer === 3) {
       setIcon(3);
+      iconsArray((preve) => [...preve, 2]);
       setColor("#FF3030");
     }
     setOpenCard(false);

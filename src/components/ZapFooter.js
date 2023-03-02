@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import Correct from "../assets/icon-correct.svg";
+import Near from "../assets/icon-near.svg";
+import Erro from "../assets/icon-erro.svg";
+const icon = [Correct, Near, Erro];
 
 const Footer = styled.footer`
   position: fixed;
@@ -16,11 +20,21 @@ const Footer = styled.footer`
     color: #333333;
   }
 `;
-const ZapFooter = ({ done, amount }) => (
+const IconArange = styled.div`
+  display: flex;
+  margin-top: 6px;
+  gap: 5px;
+`;
+const ZapFooter = ({ done, icons, amount }) => (
   <Footer>
     <p>
       {done}/{amount} CONCLUÍDOS
     </p>
+    <IconArange>
+      {icons.map((iconNumber) => (
+        <img src={icon[iconNumber]} alt="" />
+      ))}
+    </IconArange>
   </Footer>
 );
 export default ZapFooter;
