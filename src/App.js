@@ -20,7 +20,7 @@ const App = () => {
           ))}
         </Cards>
       </AppStyled>
-      <ZapFooter info="0/4 CONCLUÍDOS" />
+      <ZapFooter amount={cards.length} />
     </Displace>
   );
 };
