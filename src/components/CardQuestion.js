@@ -1,35 +1,16 @@
-import styled from "styled-components";
-import RotateIcon from "../assets/rotate.svg";
+import React, { useState } from "react";
+import QuestionFace from "./QuestionFace.js";
+import QuestionBackFace from "./QuestionBackFace.js";
 
-const CardQuestionStyle = styled.div`
-  height: 131px;
-  padding: 18px 15px;
-  box-sizing: border-box;
-  border-radius: 5px;
+const CardQuestion = ({ question, answer }) => {
+  const [rotate, setRotate] = useState(false);
 
-  background: #ffffd5;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-
-  position: relative;
-  p {
-    font-size: 18px;
-    color: #333333;
-  }
-  img {
-    width: 30px;
-    height: 20px;
-
-    position: absolute;
-    bottom: 5px;
-    right: 15px;
-    cursor: pointer;
-  }
-`;
-const CardQuestion = ({ answer }) => (
-  <CardQuestionStyle>
-    <p>{answer}</p>
-    <img src={RotateIcon} alt="imagem" />
-  </CardQuestionStyle>
-);
+  const Face = rotate ? (
+    <QuestionBackFace answer={answer} />
+  ) : (
+    <QuestionFace rotateState={setRotate} question={question} />
+  );
+  return <>{Face}</>;
+};
 
 export default CardQuestion;

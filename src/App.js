@@ -16,7 +16,7 @@ const App = () => {
         <GameHeader />
         <Cards>
           {cards.map((card, index) => (
-            <AnCard question={card.question} answer={card.answer} key={index} />
+            <AnCard cardNumber={index + 1} question={card.question} answer={card.answer} key={index} />
           ))}
         </Cards>
       </AppStyled>

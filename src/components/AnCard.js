@@ -17,8 +17,12 @@ export const Cards = styled.ul`
     border-radius: 5px;
   }
 `;
-export const AnCard = ({ question, answer }) => {
+export const AnCard = ({ cardNumber, question, answer }) => {
   const [openCard, setOpenCard] = useState(false);
-  const cardToRender = openCard ? <CardQuestion answer={answer} /> : <CardFace question={question} />;
+  const cardToRender = openCard ? (
+    <CardQuestion question={question} answer={answer} />
+  ) : (
+    <CardFace number={cardNumber} />
+  );
   return <li onClick={() => setOpenCard(true)}>{cardToRender}</li>;
 };

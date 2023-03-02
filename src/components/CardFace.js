@@ -26,9 +26,9 @@ const CardFaceStyle = styled.div`
   }
 `;
 
-const CardFace = ({ question }) => (
+const CardFace = ({ number }) => (
   <CardFaceStyle>
-    <p>{question}</p>
+    <p>{`Pergunta ${number}`}</p>
     <img src={PlayIcon} alt="imagem" />
   </CardFaceStyle>
 );
