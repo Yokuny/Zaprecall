@@ -14,11 +14,43 @@ const QuestionBackFaceStyle = styled.div`
     font-size: 18px;
     color: #333333;
   }
-`;
+  div {
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  div > button > p {
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
+  }
+`;
+const UserAnswer = styled.button`
+  border: 0px transparent;
+  width: 85.17px;
+  height: 37.17px;
+  background-color: ${(props) => props.color};
+  border-radius: 5px;
+  cursor: pointer;
+`;
 const QuestionBackFace = ({ answer }) => (
   <QuestionBackFaceStyle>
     <p>{answer}</p>
+    <div>
+      <UserAnswer color={"#FF3030"}>
+        <p>Não lembrei</p>
+      </UserAnswer>
+      <UserAnswer color={"#FF922E"}>
+        <p>Quase não lembrei</p>
+      </UserAnswer>
+      <UserAnswer color={"#2FBE34"}>
+        <p>Zap!</p>
+      </UserAnswer>
+    </div>
   </QuestionBackFaceStyle>
 );
 
