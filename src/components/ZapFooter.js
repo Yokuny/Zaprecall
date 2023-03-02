@@ -16,9 +16,11 @@ const Footer = styled.footer`
     color: #333333;
   }
 `;
-const ZapFooter = ({ amount }) => (
+const ZapFooter = ({ done, amount }) => (
   <Footer>
-    <p>0/{amount} CONCLUÍDOS</p>
+    <p>
+      {done}/{amount} CONCLUÍDOS
+    </p>
   </Footer>
 );
 export default ZapFooter;

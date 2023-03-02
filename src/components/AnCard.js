@@ -17,12 +17,23 @@ export const Cards = styled.ul`
     border-radius: 5px;
   }
 `;
-export const AnCard = ({ cardNumber, question, answer }) => {
+export const AnCard = ({ done, cardNumber, question, answer }) => {
   const [openCard, setOpenCard] = useState(false);
+  const getUserAnswer = (answer) => {
+    if (answer === 1) {
+      console.log("acertou");
+    } else if (answer === 0) {
+      console.log("quase acertou");
+    } else if (answer === -1) {
+      console.log("errou");
+    }
+    setOpenCard(false);
+    done((prev) => prev + 1);
+  };
   const cardToRender = openCard ? (
-    <CardQuestion question={question} answer={answer} />
+    <CardQuestion closeCard={getUserAnswer} question={question} answer={answer} />
   ) : (
-    <CardFace number={cardNumber} />
+    <CardFace openCard={setOpenCard} number={cardNumber} />
   );
-  return <li onClick={() => setOpenCard(true)}>{cardToRender}</li>;
+  return <li>{cardToRender}</li>;
 };

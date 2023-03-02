@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import QuestionFace from "./QuestionFace.js";
 import QuestionBackFace from "./QuestionBackFace.js";
 
-const CardQuestion = ({ question, answer }) => {
+const CardQuestion = ({ closeCard, question, answer }) => {
   const [rotate, setRotate] = useState(false);
 
   const Face = rotate ? (
-    <QuestionBackFace answer={answer} />
+    <QuestionBackFace getUserAnswer={closeCard} answer={answer} />
   ) : (
     <QuestionFace rotateState={setRotate} question={question} />
   );

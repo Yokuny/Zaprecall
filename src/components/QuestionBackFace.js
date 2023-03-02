@@ -40,17 +40,17 @@ const UserAnswer = styled.button`
     animation: balance 2s infinite, flicker 2s infinite;
   }
 `;
-const QuestionBackFace = ({ answer }) => (
+const QuestionBackFace = ({ getUserAnswer, answer }) => (
   <QuestionBackFaceStyle>
     <p>{answer}</p>
     <div>
-      <UserAnswer color={"#FF3030"}>
+      <UserAnswer onClick={() => getUserAnswer(-1)} color={"#FF3030"}>
         <p>Não lembrei</p>
       </UserAnswer>
-      <UserAnswer color={"#FF922E"}>
+      <UserAnswer onClick={() => getUserAnswer(0)} color={"#FF922E"}>
         <p>Quase não lembrei</p>
       </UserAnswer>
-      <UserAnswer color={"#2FBE34"}>
+      <UserAnswer onClick={() => getUserAnswer(1)} color={"#2FBE34"}>
         <p>Zap!</p>
       </UserAnswer>
     </div>

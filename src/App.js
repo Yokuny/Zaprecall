@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import Displace from "./components/Displace";
 import GameHeader from "./components/GameHeader";
@@ -10,17 +11,24 @@ const AppStyled = styled.div`
 `;
 
 const App = () => {
+  const [done, setDone] = useState(0);
   return (
     <Displace>
       <AppStyled>
         <GameHeader />
         <Cards>
           {cards.map((card, index) => (
-            <AnCard cardNumber={index + 1} question={card.question} answer={card.answer} key={index} />
+            <AnCard
+              done={setDone}
+              cardNumber={index + 1}
+              question={card.question}
+              answer={card.answer}
+              key={index}
+            />
           ))}
         </Cards>
       </AppStyled>
-      <ZapFooter amount={cards.length} />
+      <ZapFooter done={done} amount={cards.length} />
     </Displace>
   );
 };

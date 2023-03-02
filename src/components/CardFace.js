@@ -13,7 +13,6 @@ const CardFaceStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
   &:hover {
     animation: balance 2s infinite;
   }
@@ -23,13 +22,14 @@ const CardFaceStyle = styled.div`
   }
   img {
     height: 23px;
+    cursor: pointer;
   }
 `;
 
-const CardFace = ({ number }) => (
+const CardFace = ({ openCard, number }) => (
   <CardFaceStyle>
     <p>{`Pergunta ${number}`}</p>
-    <img src={PlayIcon} alt="imagem" />
+    <img onClick={() => openCard(true)} src={PlayIcon} alt="imagem" />
   </CardFaceStyle>
 );
 export default CardFace;
