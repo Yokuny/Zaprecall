@@ -36,6 +36,9 @@ const UserAnswer = styled.button`
   background-color: ${(props) => props.color};
   border-radius: 5px;
   cursor: pointer;
+  &:hover {
+    animation: balance 2s infinite, flicker 2s infinite;
+  }
 `;
 const QuestionBackFace = ({ answer }) => (
   <QuestionBackFaceStyle>
