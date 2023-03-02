@@ -2,15 +2,15 @@ import styled from "styled-components";
 import RotateIcon from "../assets/rotate.svg";
 
 const CardQuestionStyle = styled.div`
-  position: relative;
-  width: 300px;
   height: 131px;
-  box-sizing: border-box;
   padding: 18px 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
 
   background: #ffffd5;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
+
+  position: relative;
   p {
     font-size: 18px;
     color: #333333;

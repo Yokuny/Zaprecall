@@ -49,14 +49,17 @@ table {
 0% {
 	transform: rotate(0deg);
 }
-30% {
+25% {
+	transform: rotate(2deg);
+}
+50% {
 	transform: rotate(4deg);
 }
-60% {
-	transform: rotate(0deg);
+75% {
+	transform: rotate(-4deg);
 }
 100% {
-	transform: rotate(-4deg);
+	transform: rotate(0deg);
 }
 }
 @keyframes flicker {
