@@ -12,6 +12,7 @@ const AppStyled = styled.div`
 
 const App = () => {
   const [done, setDone] = useState(0);
+  const [answerIcons, setAnswerIcons] = useState([]);
   return (
     <Displace>
       <AppStyled>
@@ -20,6 +21,7 @@ const App = () => {
           {cards.map((card, index) => (
             <AnCard
               done={setDone}
+              iconsArray={setAnswerIcons}
               cardNumber={index + 1}
               question={card.question}
               answer={card.answer}
@@ -28,7 +30,7 @@ const App = () => {
           ))}
         </Cards>
       </AppStyled>
-      <ZapFooter done={done} amount={cards.length} />
+      <ZapFooter done={done} amount={cards.length} icons={answerIcons} />
     </Displace>
   );
 };

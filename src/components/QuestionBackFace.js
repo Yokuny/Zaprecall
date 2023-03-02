@@ -31,8 +31,8 @@ const QuestionBackFaceStyle = styled.div`
 `;
 const UserAnswer = styled.button`
   border: 0px transparent;
-  width: 85.17px;
-  height: 37.17px;
+  width: 86px;
+  height: 36px;
   background-color: ${(props) => props.color};
   border-radius: 5px;
   cursor: pointer;
