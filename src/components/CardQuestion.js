@@ -1,7 +1,9 @@
 import styled from "styled-components";
-const CardQuestion = styled.div`
+import RotateIcon from "../assets/rotate.svg";
+
+const CardQuestionStyle = styled.div`
   position: relative;
-  width: 299px;
+  width: 300px;
   height: 131px;
   box-sizing: border-box;
   padding: 18px 15px;
@@ -23,4 +25,11 @@ const CardQuestion = styled.div`
     cursor: pointer;
   }
 `;
+const CardQuestion = ({ answer }) => (
+  <CardQuestionStyle>
+    <p>{answer}</p>
+    <img src={RotateIcon} alt="imagem" />
+  </CardQuestionStyle>
+);
+
 export default CardQuestion;

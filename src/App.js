@@ -15,8 +15,8 @@ const App = () => {
       <AppStyled>
         <GameHeader />
         <Cards>
-          {cards.map((card) => (
-            <AnCard question={card.question} answer={card.answer} />
+          {cards.map((card, index) => (
+            <AnCard question={card.question} answer={card.answer} key={index} />
           ))}
         </Cards>
       </AppStyled>
