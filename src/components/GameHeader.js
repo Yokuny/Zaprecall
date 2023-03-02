@@ -10,41 +10,17 @@ const Header = styled.div`
     object-fit: contain;
   }
   img:hover {
-    animation: logo-animation 1s infinite, logo-flick 1s infinite;
-  }
-  @keyframes logo-flick {
-    5% {
-      filter: brightness(100%);
-    }
-    10% {
-      filter: brightness(120%);
-    }
-    15% {
-      filter: brightness(100%);
-    }
+    animation: balance 1s infinite, flicker 1s infinite;
   }
   h1 {
-    color: white;
+    font-family: "Righteous", cursive;
     font-size: 36px;
+    color: white;
     letter-spacing: -0.012em;
     transform: rotate(0.58deg);
   }
   h1:hover {
-    animation: logo-animation 1s infinite;
-  }
-  @keyframes logo-animation {
-    0% {
-      transform: rotate(0deg);
-    }
-    30% {
-      transform: rotate(4deg);
-    }
-    60% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-4deg);
-    }
+    animation: balance 1s infinite;
   }
 `;
 const GameHeader = () => (

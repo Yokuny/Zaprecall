@@ -21,8 +21,8 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: 'Recursive', sans-serif;
 	font-family: 'Righteous', cursive;
+	font-family: 'Recursive', sans-serif;
 	vertical-align: baseline;
 }
 article, aside, details, figcaption, figure, 
@@ -48,5 +48,31 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+@keyframes balance {
+0% {
+	transform: rotate(0deg);
+}
+30% {
+	transform: rotate(4deg);
+}
+60% {
+	transform: rotate(0deg);
+}
+100% {
+	transform: rotate(-4deg);
+}
+}
+@keyframes flicker {
+5% {
+	filter: brightness(100%);
+}
+10% {
+	filter: brightness(120%);
+}
+15% {
+	filter: brightness(100%);
+}
+}
 `;
 export default ResetCss;
+
