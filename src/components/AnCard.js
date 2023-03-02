@@ -1,19 +1,21 @@
+import React, { useState } from "react";
 import styled from "styled-components";
+import CardFace from "./CardFace";
 import CardQuestion from "./CardQuestion";
-import PlayIcon from "../assets/play.svg";
-import RotateIcon from "../assets/rotate.svg";
+
 export const Cards = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
   padding-bottom: calc(70px + 25px);
+
   li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 15px;
+
     width: 300px;
     height: 65px;
     box-sizing: border-box;
@@ -34,13 +36,9 @@ export const Cards = styled.ul`
     height: 23px;
   }
 `;
-export const AnCard = ({ question }) => (
-  <li>
-    <p>{question}</p>
-    <img src={PlayIcon} alt="imagem" />
-    <CardQuestion>
-      <p>O que é JSX?</p>
-      <img src={RotateIcon} alt="jsx" />
-    </CardQuestion>
-  </li>
-);
+
+export const AnCard = ({ question, answer }) => {
+  const [openCard, setOpenCard] = useState(false);
+  const cardToRender = openCard ? <CardQuestion answer={answer} /> : <CardFace question={question} />;
+  return <li onClick={() => setOpenCard(true)}>{cardToRender}</li>;
+};
