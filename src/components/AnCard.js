@@ -46,5 +46,5 @@ export const AnCard = ({ done, iconsArray, cardNumber, question, answer }) => {
   ) : (
     <CardFace finished={finished} iconIndex={icon} color={color} openCard={setOpenCard} number={cardNumber} />
   );
-  return <li>{cardToRender}</li>;
+  return <li data-test="flashcard">{cardToRender}</li>;
 };

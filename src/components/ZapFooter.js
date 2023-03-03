@@ -28,12 +28,12 @@ const IconArange = styled.div`
 `;
 const ZapFooter = ({ done, amount, icons, congrats, margin }) => {
   return (
-    <Footer margin={margin}>
+    <Footer margin={margin} data-test="footer">
       {congrats > 0 ? (
         congrats === 1 ? (
-          <Congratulations mood={true} />
+          <Congratulations mood={true} data-test="finish-text" />
         ) : (
-          <Congratulations mood={false} />
+          <Congratulations mood={false} data-test="finish-text" />
         )
       ) : (
         ""
