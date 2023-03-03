@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import React, { useState } from "react";
 import Start from "../assets/icon-start.svg";
 import Correct from "../assets/icon-correct.svg";
 import Near from "../assets/icon-near.svg";
@@ -36,11 +36,34 @@ const CardFaceStyle = styled.div`
 `;
 
 const CardFace = ({ finished, iconIndex, color, number, openCard }) => {
+  const [dataTest, setDataTest] = useState("play-btn");
+  const [done, setDone] = useState(false);
+  if (!done) {
+    if (iconIndex !== 0) {
+      switch (iconIndex) {
+        case 0:
+          setDataTest("play-btn");
+          break;
+        case 1:
+          setDataTest("zap-icon");
+          break;
+        case 2:
+          setDataTest("partial-icon");
+          break;
+        case 3:
+          setDataTest("no-icon");
+          break;
+        default:
+          setDataTest("play-btn");
+      }
+      setDone(true);
+    }
+  }
   const functionActive = !finished ? () => openCard(true) : undefined;
   return (
     <CardFaceStyle color={color} line={finished}>
       <p data-test="flashcard-text">{`Pergunta ${number}`}</p>
-      <img onClick={functionActive} src={icon[iconIndex]} alt="imagem" />
+      <img onClick={functionActive} src={icon[iconIndex]} data-test={dataTest} alt="imagem" />
     </CardFaceStyle>
   );
 };
