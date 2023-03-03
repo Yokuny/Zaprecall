@@ -6,9 +6,9 @@ const CardQuestion = ({ closeCard, question, answer }) => {
   const [rotate, setRotate] = useState(false);
 
   const Face = rotate ? (
-    <QuestionBackFace getUserAnswer={closeCard} answer={answer} />
+    <QuestionBackFace getUserAnswer={closeCard} answer={answer} data-test="flashcard-text" />
   ) : (
-    <QuestionFace rotateState={setRotate} question={question} />
+    <QuestionFace rotateState={setRotate} question={question} data-test="flashcard-text" />
   );
   return <>{Face}</>;
 };
