@@ -1,4 +1,4 @@
-# [Zap Recall](projeto9-zaprecall-yokuny.vercel.app) - Um aplicativo de Flashcards
+# [Zap Recall](https://projeto9-zaprecall-yokuny.vercel.app/) - Um aplicativo de Flashcards
 > Seja bem-vindo ao **Zap Recall**! Este aplicativo é um projeto de React que tem como objetivo ajudá-lo a treinar sua memória utilizando a técnica de flashcards.
 
 ## O que são Flashcards?
@@ -8,7 +8,7 @@ Flashcards são cartões que contêm uma **pergunta ou afirmação na frente e u
 ## O que é Zap Recall?
 **Zap Recall** é um aplicativo de flashcards que permite que você crie **seus próprios conjuntos de cartões e pratique o que quiser**. Por padrão, o aplicativo inclui um conjunto de oito cartões com perguntas sobre React e suas tecnologias.
 
-*[Deploy do projeto nesse link](projeto9-zaprecall-yokuny.vercel.app)*
+*[Deploy do projeto nesse link](https://projeto9-zaprecall-yokuny.vercel.app/)*
 
 ## Tecnologias usadas
 - React JS
