@@ -39,7 +39,7 @@ const CardFace = ({ finished, iconIndex, color, number, openCard }) => {
   const functionActive = !finished ? () => openCard(true) : undefined;
   return (
     <CardFaceStyle color={color} line={finished}>
-      <p>{`Pergunta ${number}`}</p>
+      <p data-test="flashcard-text">{`Pergunta ${number}`}</p>
       <img onClick={functionActive} src={icon[iconIndex]} alt="imagem" />
     </CardFaceStyle>
   );

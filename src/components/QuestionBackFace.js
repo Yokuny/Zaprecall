@@ -44,13 +44,13 @@ const QuestionBackFace = ({ getUserAnswer, answer }) => (
   <QuestionBackFaceStyle>
     <p>{answer}</p>
     <div>
-      <UserAnswer onClick={() => getUserAnswer(3)} color={"#FF3030"}>
+      <UserAnswer onClick={() => getUserAnswer(3)} color={"#FF3030"} data-test="no-btn">
         <p>Não lembrei</p>
       </UserAnswer>
-      <UserAnswer onClick={() => getUserAnswer(2)} color={"#FF922E"}>
+      <UserAnswer onClick={() => getUserAnswer(2)} color={"#FF922E"} data-test="partial-btn">
         <p>Quase não lembrei</p>
       </UserAnswer>
-      <UserAnswer onClick={() => getUserAnswer(1)} color={"#2FBE34"}>
+      <UserAnswer onClick={() => getUserAnswer(1)} color={"#2FBE34"} data-test="zap-btn">
         <p>Zap!</p>
       </UserAnswer>
     </div>

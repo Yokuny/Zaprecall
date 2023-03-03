@@ -29,7 +29,7 @@ const QuestionFaceStyle = styled.div`
 const QuestionFace = ({ rotateState, question }) => (
   <QuestionFaceStyle>
     <p>{question}</p>
-    <img onClick={() => rotateState(true)} src={Rotate} alt="imagem" />
+    <img onClick={() => rotateState(true)} src={Rotate} alt="imagem" data-test="turn-btn" />
   </QuestionFaceStyle>
 );
 export default QuestionFace;
