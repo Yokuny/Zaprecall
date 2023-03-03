@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import RotateIcon from "../assets/rotate.svg";
+import Rotate from "../assets/icon-rotate.svg";
 
 const QuestionFaceStyle = styled.div`
   height: 131px;
@@ -29,7 +29,7 @@ const QuestionFaceStyle = styled.div`
 const QuestionFace = ({ rotateState, question }) => (
   <QuestionFaceStyle>
     <p>{question}</p>
-    <img onClick={() => rotateState(true)} src={RotateIcon} alt="imagem" />
+    <img onClick={() => rotateState(true)} src={Rotate} alt="imagem" />
   </QuestionFaceStyle>
 );
 export default QuestionFace;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import zapRecallLogo from "../assets/logo.png";
+import zapRecallLogo from "../assets/icon-zap.svg";
 const Header = styled.div`
   display: flex;
   align-items: center;

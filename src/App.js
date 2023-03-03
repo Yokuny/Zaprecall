@@ -8,14 +8,29 @@ import cards from "./data/mock";
 
 const AppStyled = styled.div`
   width: min(100%, 375px);
+  margin-bottom: ${(props) => (props.margin ? "101px" : "0px")};
 `;
-
 const App = () => {
   const [done, setDone] = useState(0);
+  const [gameEnded, setGameEnded] = useState(false);
   const [answerIcons, setAnswerIcons] = useState([]);
+  const [congrats, setCongrats] = useState(0);
+  const [margin, setMargin] = useState(false);
+  if (!gameEnded) {
+    if (done === cards.length) {
+      setCongrats(1);
+      answerIcons.forEach((icon) => {
+        if (icon >= 2) {
+          setCongrats(2);
+        }
+      });
+      setGameEnded(true);
+      setMargin(true);
+    }
+  }
   return (
     <Displace>
-      <AppStyled>
+      <AppStyled margin={margin}>
         <GameHeader />
         <Cards>
           {cards.map((card, index) => (
@@ -30,7 +45,7 @@ const App = () => {
           ))}
         </Cards>
       </AppStyled>
-      <ZapFooter done={done} amount={cards.length} icons={answerIcons} />
+      <ZapFooter done={done} amount={cards.length} icons={answerIcons} congrats={congrats} margin={margin} />
     </Displace>
   );
 };

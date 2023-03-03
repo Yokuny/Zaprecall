@@ -36,7 +36,7 @@ const CardFaceStyle = styled.div`
 `;
 
 const CardFace = ({ finished, iconIndex, color, number, openCard }) => {
-  const functionActive = !finished && (() => openCard(true));
+  const functionActive = !finished ? () => openCard(true) : undefined;
   return (
     <CardFaceStyle color={color} line={finished}>
       <p>{`Pergunta ${number}`}</p>
