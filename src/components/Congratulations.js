@@ -25,7 +25,7 @@ const Msg = styled.p`
   margin-bottom: 14px;
 `;
 const Congratulations = ({ mood }) => (
-  <CongratulationsStyle>
+  <CongratulationsStyle data-test="finish-text">
     <div>
       <img src={mood ? Happy : Sad} alt="" />
       <p>{mood ? "Parabéns!" : "Putz..."} </p>
